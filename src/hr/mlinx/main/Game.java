@@ -20,7 +20,7 @@ public class Game extends Canvas implements Runnable, Renderable {
 	public static final int WIDTH = GameObject.SIZE * GRID_SIZE;
 	public static final int HEIGHT = GameObject.SIZE * GRID_SIZE;
 	public static final Rectangle BOUNDS = new Rectangle(0, 0, WIDTH, HEIGHT);
-	private static final Color ENDGROUND = new Color(135, 255, 165);
+	private static final Color BACKGROUND = new Color(135, 255, 165);
 	
 	private Thread thread;
 	private boolean running;
@@ -100,7 +100,7 @@ public class Game extends Canvas implements Runnable, Renderable {
 		}
 		Graphics2D g2 = (Graphics2D) bs.getDrawGraphics();
 		
-		g2.setColor(ENDGROUND);
+		g2.setColor(BACKGROUND);
 		g2.fillRect(0, 0, WIDTH, HEIGHT);
 		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
 						    RenderingHints.VALUE_ANTIALIAS_ON);
