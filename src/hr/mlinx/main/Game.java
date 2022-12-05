@@ -6,6 +6,7 @@ import java.awt.Dimension;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.RenderingHints;
+import java.awt.Toolkit;
 import java.awt.image.BufferStrategy;
 
 import hr.mlinx.game_object.Apple;
@@ -24,6 +25,8 @@ public class Game extends Canvas implements Runnable, Renderable {
 	
 	private Thread thread;
 	private boolean running;
+	private boolean isUnix;
+	private Toolkit tk;
 	
 	private Handler handler;
 	private HUD hud;
@@ -36,6 +39,8 @@ public class Game extends Canvas implements Runnable, Renderable {
 		Frame.set("Snake Game", this);
 		
 		thread = new Thread(this);
+		isUnix = isUnix();
+		if (isUnix) tk = Toolkit.getDefaultToolkit();
 		handler = new Handler();
 		hud = new HUD(handler);
 		
@@ -110,10 +115,19 @@ public class Game extends Canvas implements Runnable, Renderable {
 		
 		g2.dispose();
 		bs.show();
+		if (isUnix) tk.sync();
 	}
 	
 	public static void main(String[] args) {
+		if (isUnix()) {
+			System.setProperty("sun.java2d.opengl", "true");
+		}
+		
 		new Game().start();
+	}
+	
+	private static boolean isUnix() {
+		return System.getProperty("os.name").startsWith("Linux");
 	}
 	
 }
