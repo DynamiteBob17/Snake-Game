@@ -3,7 +3,7 @@ If you have [Java 17](https://www.oracle.com/java/technologies/javase/jdk17-arch
 - download the [.JAR file](https://github.com/PickleEaterJim33/Snake-Game/raw/main/target/SnakeGame.jar) located in the "target" directory and run it  
 **OR**
 - compile and run the repository as a Maven project with your method of choice.</br></br>
-`mvn clean compile exec:java` to run from a command.</br></br>
+`mvn clean install exec:java` to run from a command.</br></br>
 
 > :warning: **If you run the program with no sound devices existing or connected to your sistem (if your sound is just muted this doesn't apply)**:  </br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The MIDI sounds will not be loaded, so if you connect any sound device  
