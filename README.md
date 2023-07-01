@@ -2,6 +2,7 @@
 - a classic snake game with audio feedback for events such as collecting an apple, hitting a wall/losing and winning the game 
 - the apples spawn in the available spaces and inputs for snake directions are queued and consumed on each movement of the snake 
 - created with Java Swing
+- [live demo](https://drive.google.com/file/d/1rSL7jooabvl-GhF_3Mvj9AFce1u7kVJf/view)
 
 # How to use	
 If you have [Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) and up installed you can:
